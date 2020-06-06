@@ -44,6 +44,8 @@ namespace Application.Activities
         _context.Activities.Add(activity);
         var success = await _context.SaveChangesAsync() > 0;
 
+        // When API controller receives Unit.Value, it will send the 200 response
+        // Unit.Value is just a dummy message
         if (success) return Unit.Value;
 
         throw new Exception("Problem saving changes");
